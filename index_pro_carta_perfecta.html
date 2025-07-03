@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CartaPerfecta.ai - Tu carta en segundos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+      padding: 2rem;
+    }
+    .container {
+      background: #fff;
+      max-width: 700px;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+    input[type="text"] {
+      padding: 12px;
+      width: 80%;
+      max-width: 400px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #ff0066;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 30px;
+      text-align: left;
+      background: #fefefe;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .cta {
+      margin-top: 30px;
+    }
+    .cta a {
+      background: #222;
+      color: #fff;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CartaPerfecta.ai</h1>
+    <p>Genera tu carta de presentación en segundos con IA</p>
+    <input type="text" id="puesto" placeholder="Ej. Camarero, Recepcionista..." />
+    <button onclick="generarCarta()">Generar carta gratis</button>
+    <div class="output" id="resultado"></div>
+    <div class="cta">
+      <p>¿Quieres la versión profesional en PDF?</p>
+      <a href="https://cartaperfecta.lemonsqueezy.com/buy/6c721858-0463-473c-9212-8ba49a56f30b" target="_blank">Descargar por 2,99 €</a>
+    </div>
+  </div>
+  <script>
+    function generarCarta() {
+      var puesto = document.getElementById("puesto").value.trim();
+      var resultado = document.getElementById("resultado");
+      if (!puesto) {
+        resultado.innerHTML = "<p style='color:red;'>Escribe un puesto válido.</p>";
+        return;
+      }
+      resultado.innerHTML = `
+        <h3>Carta generada:</h3>
+        <p>Estimado/a responsable de selección,</p>
+        <p>Me dirijo a usted para expresar mi interés en el puesto de <strong>${puesto}</strong>. 
+        Me considero una persona proactiva, responsable y con una alta motivación por contribuir de forma positiva al equipo.</p>
+        <p>Adjunto mi currículum y quedo a su disposición para ampliar cualquier información adicional que necesiten.</p>
+        <p>Gracias por su atención.</p>
+        <p>Atentamente,<br>[Tu nombre]</p>
+        <p style='color:#888;font-size:14px;'>Generado por CartaPerfecta.ai</p>
+      `;
+    }
+  </script>
+</body>
+</html>
